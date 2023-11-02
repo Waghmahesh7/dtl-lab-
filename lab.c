@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     char operator;
     double num1, num2, result;
 
     // Input the operator and operands
-    printf("Enter operator (+, -, *, /): ");
+    printf("Enter operator (+, -, *, /, ^): ");
     scanf("%c", &operator);
 
     printf("Enter two numbers: ");
@@ -30,6 +31,9 @@ int main() {
                 printf("Error: Division by zero is not allowed.\n");
                 return 1; // Exit with an error code
             }
+            break;
+        case '^':
+            result = pow(num1, num2);
             break;
         default:
             printf("Error: Invalid operator.\n");
